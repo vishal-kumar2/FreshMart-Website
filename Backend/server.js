@@ -14,7 +14,10 @@ import { address } from "./routes/addressRoutes.js";
 const app = express();
 
 /* ================= MIDDLEWARE ================= */
-app.use(cors());
+app.use(cors({
+  origin: "https://fresh-mart-website.vercel.app",
+  credentials: true
+}));
 
 
 app.use(cookieParser());
