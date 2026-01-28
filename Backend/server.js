@@ -14,17 +14,9 @@ import { address } from "./routes/addressRoutes.js";
 const app = express();
 
 /* ================= MIDDLEWARE ================= */
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173", // dev
-      "https://fresh-mart-website.vercel.app", // later
-    ],
-    credentials: true,
-  })
-);
+app.use(cors());
 
-app.options("*", cors());
+
 app.use(cookieParser());
 
 app.use(express.json());
