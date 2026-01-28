@@ -14,10 +14,15 @@ import { address } from "./routes/addressRoutes.js";
 const app = express();
 
 /* ================= MIDDLEWARE ================= */
-app.use(cors({
-  origin: "http://localhost:5173", // frontend URL
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // dev
+      "https://your-frontend.vercel.app", // later
+    ],
+    credentials: true,
+  })
+);
 app.use(cookieParser());
 
 app.use(express.json());
