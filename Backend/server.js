@@ -18,11 +18,13 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", // dev
-      "https://your-frontend.vercel.app", // later
+      "https://fresh-mart-website.vercel.app", // later
     ],
     credentials: true,
   })
 );
+
+app.options("*", cors());
 app.use(cookieParser());
 
 app.use(express.json());
